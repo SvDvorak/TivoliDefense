@@ -4,6 +4,9 @@ using UnityEngine.AI;
 
 public class Death : MonoBehaviour
 {
+    public delegate void OnKilled(Death @object);
+    public OnKilled onKilled;
+
     public void Start()
     {
         //StartCoroutine(WaitAndKill());
@@ -22,10 +25,12 @@ public class Death : MonoBehaviour
 
     public void Kill()
     {
+        onKilled?.Invoke(this);
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<MoveToTarget>().enabled = false;
         var rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.AddForce(Random.insideUnitSphere*10, ForceMode.Impulse);
+        gameObject.layer = 0;
     }
 }

@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 2164055899969841439}
   - component: {fileID: 2164055899969841438}
   - component: {fileID: 2164055899969841437}
+  - component: {fileID: 1386187868}
+  - component: {fileID: 1386187869}
   m_Layer: 10
-  m_Name: Survivor 1
+  m_Name: Survivor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,6 +72,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectionIndicator: {fileID: 2164055901397470324}
   NavMeshAgent: {fileID: 2164055899969841438}
+--- !u!135 &1386187868
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164055899969841436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 17
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1386187869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164055899969841436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745c0f185c84d1f4b83576c5ea156d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieAttackTrigger: {fileID: 0}
 --- !u!1 &2164055900701895722
 GameObject:
   m_ObjectHideFlags: 0
