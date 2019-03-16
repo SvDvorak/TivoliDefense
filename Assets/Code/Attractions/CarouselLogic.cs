@@ -9,7 +9,7 @@ public class CarouselLogic : MonoBehaviour, IAttraction
     private float _startTime = 0;
     private int _kills;
     private float _spinSpeed;
-    private float _maxSpeed = 180;
+    private float _maxSpeed = 60;
     private bool _broken;
 
     public void Start()

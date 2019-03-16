@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Assets {
+namespace Assets
+{
     public class Build : MonoBehaviour
     {
         public GameObject WallPrefab;
@@ -10,13 +11,18 @@ namespace Assets {
         public void Update()
         {
             if (Gamestate.Gameover || Gamestate.WindowOpen != null)
+            {
                 return;
+            }
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var isInputOverGround = Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Ground"));
-            Gamestate.InputGroundPosition = hit.point;
-            if (!isInputOverGround)
+            var isInputOverGround = Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Ground", "Clickable"));
+            if (!isInputOverGround || hit.transform.gameObject.layer == LayerMask.NameToLayer("Clickable"))
+            {
                 return;
+            }
+
+            Gamestate.InputGroundPosition = hit.point;
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -27,7 +33,7 @@ namespace Assets {
             if (_currentlyPlacing != null)
             {
                 var inputDelta = hit.point - _placementStart;
-                if(inputDelta.sqrMagnitude > 0)
+                if (inputDelta.sqrMagnitude > 0)
                 {
                     var look = Quaternion.LookRotation(inputDelta, Vector3.up);
                     _currentlyPlacing.transform.rotation = look;

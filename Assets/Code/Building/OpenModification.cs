@@ -17,8 +17,16 @@ public class OpenModification : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Window.SetActive(!Window.activeSelf);
-        if(Window.activeSelf)
-            Gamestate.WindowOpen = this;
+        Gamestate.SetWindowState(this, !Window.activeSelf);
+    }
+
+    public void Open()
+    {
+        Window.SetActive(true);
+    }
+
+    public void Close()
+    {
+        Window.SetActive(false);
     }
 }
