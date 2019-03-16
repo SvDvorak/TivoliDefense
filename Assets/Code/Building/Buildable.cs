@@ -50,7 +50,6 @@ public class Buildable : MonoBehaviour
 
     private void BuiltDestroyed()
     {
-        Debug.Log("DESTROYED!");
         _builtObject.Destroyed -= BuiltDestroyed;
     }
 }

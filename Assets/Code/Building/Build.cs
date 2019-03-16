@@ -9,7 +9,7 @@ namespace Assets {
 
         public void Update()
         {
-            if (Gamestate.Gameover)
+            if (Gamestate.Gameover || Gamestate.WindowOpen != null)
                 return;
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
