@@ -18,7 +18,7 @@ public class MoveToTarget : MonoBehaviour
     private IEnumerator FollowMouseCursor()
     {
         yield return new WaitForSeconds(Random.value * 3);
-        while (true)
+        while (enabled)
         {
             _navMeshAgent.SetDestination(Gamestate.InputGroundPosition);
             yield return new WaitForSeconds(3);

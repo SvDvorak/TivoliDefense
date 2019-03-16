@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Buildable : MonoBehaviour
 {
     public GameObject Preview;
     public GameObject Built;
+    public bool IsFinished;
 
     private float _height;
     private Vector3 _startPosition;
     private Vector3 _endPosition;
+    private BuiltObject _builtObject;
 
     public void Start()
     {
+        _builtObject = Built.GetComponent<BuiltObject>();
+        _builtObject.Destroyed += BuiltDestroyed;
+        if(IsFinished)
+            Finish();
     }
 
     public void StartBuilding()
@@ -28,8 +33,7 @@ public class Buildable : MonoBehaviour
     private IEnumerator FinishBuilding()
     {
         yield return CoroutineActions.Interpolate(4, GrowFromGround);
-        Preview.SetActive(false);
-        Built.GetComponent<ActivateCollidable>().Activate();
+        Finish();
     }
 
     private void GrowFromGround(float value)
@@ -37,25 +41,16 @@ public class Buildable : MonoBehaviour
         Built.transform.position = Vector3.Lerp(_startPosition, _endPosition, value);
     }
 
-    public void Update()
+    private void Finish()
     {
-        
+        Built.SetActive(true);
+        Preview.SetActive(false);
+        _builtObject.Activate();
     }
 
-}
-
-public static class CoroutineActions
-{
-    public static IEnumerator Interpolate(float runTime, Action<float> interpolationAction)
+    private void BuiltDestroyed()
     {
-        var startTime = Time.time;
-        var elapsed = 0f;
-
-        while (elapsed < 1)
-        {
-            elapsed = Mathf.Clamp((Time.time - startTime) / runTime, 0, 1);
-            interpolationAction(elapsed);
-            yield return 0;
-        }
+        Debug.Log("DESTROYED!");
+        _builtObject.Destroyed -= BuiltDestroyed;
     }
 }
