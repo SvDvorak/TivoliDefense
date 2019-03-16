@@ -97,7 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745c0f185c84d1f4b83576c5ea156d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZombieAttackTrigger: {fileID: 0}
+  GunTrail: {fileID: 0}
+  ZombieAttackTrigger: {fileID: 1386187868}
+  NearbyZombies: []
 --- !u!1 &2164055900701895722
 GameObject:
   m_ObjectHideFlags: 0

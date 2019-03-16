@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SurvivorShoot : MonoBehaviour
 {
-
+    public GunTrail GunTrail;
     public SphereCollider ZombieAttackTrigger;
     public List<Death> NearbyZombies = new List<Death>();
     private Death ZombieTarget = null;
@@ -50,6 +50,12 @@ public class SurvivorShoot : MonoBehaviour
             if (zombie == null) continue;
 
             Debug.DrawLine(transform.position, zombie.transform.position, Color.blue, time);
+
+            var gunTrailInstance = Instantiate(GunTrail, null);
+            gunTrailInstance.StartPosition = transform.position;
+            gunTrailInstance.EndPosition = zombie.transform.position;
+
+
             NearbyZombies.Remove(zombie);
             zombie.Kill();
         }
