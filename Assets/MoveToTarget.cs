@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Assets;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,5 +28,10 @@ public class MoveToTarget : MonoBehaviour
 
     public void Update()
     {
+        if (Gamestate.Gameover)
+        {
+            _navMeshAgent.isStopped = true;
+            enabled = false;
+        }
     }
 }

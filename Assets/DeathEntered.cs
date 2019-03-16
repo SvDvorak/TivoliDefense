@@ -14,12 +14,12 @@ public class DeathEntered : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        switch (collision.gameObject.tag)
+        switch (collision.gameObject.tag.ToUpper())
         {
-            case "Zombie":
+            case "ZOMBIE":
                 collision.gameObject.GetComponent<Death>().Kill();
                 break;
-            case "Buildable":
+            case "BUILDABLE":
                 collision.gameObject.GetComponent<BuiltObject>().Destroy();
                 break;
         }
