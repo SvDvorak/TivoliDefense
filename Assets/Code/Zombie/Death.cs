@@ -10,6 +10,10 @@ public class Death : MonoBehaviour
     public void Start()
     {
         //StartCoroutine(WaitAndKill());
+        foreach (var rb in GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = true;
+        }
     }
 
     private IEnumerator WaitAndKill()
@@ -23,6 +27,7 @@ public class Death : MonoBehaviour
         
     }
 
+    [ContextMenu("KILL")]
     public void Kill()
     {
         onKilled?.Invoke(this);
@@ -30,6 +35,20 @@ public class Death : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         GetComponent<MoveToTarget>().enabled = false;
         //rb.AddForce(Random.insideUnitSphere*10, ForceMode.Impulse);
-        gameObject.layer = 0;
+
+        RemoveLayerOnAllChildren(transform);
+        foreach (var rb in GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = false;
+        }
+    }
+
+    public void RemoveLayerOnAllChildren(Transform parent)
+    {
+        parent.gameObject.layer = 0;
+        foreach (Transform child in parent)
+        {
+            RemoveLayerOnAllChildren(child);
+        }
     }
 }

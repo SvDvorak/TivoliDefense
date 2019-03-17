@@ -5,6 +5,7 @@ namespace Assets.Code.Attractions
 {
     public class AttractionLogic : MonoBehaviour, IAttraction
     {
+        public float BreakThreshold;
         public List<KillTool> KillTools = new List<KillTool>();
         public ParticleSystem Smoke;
         public string AttractionName { get; protected set; }
@@ -39,7 +40,7 @@ namespace Assets.Code.Attractions
             Speed = Mathf.Clamp(Speed + changedSpeed, 0, _maxSpeed);
 
             var wear = Time.time - _startTime + _kills * 1;
-            if (wear > 20 && !_broken)
+            if (wear > BreakThreshold && !_broken)
             {
                 BreakDown();
             }
