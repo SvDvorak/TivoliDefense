@@ -40,6 +40,6 @@ public class MoveToTarget : MonoBehaviour
         }
 
         if (_animator != null)
-            _animator.SetFloat("Distance", Mathf.Min(_navAgent.remainingDistance, MaxSpeed) * 1.3f);
+            _animator.SetFloat("Distance", Mathf.Clamp(_navAgent.remainingDistance, 0.2f, MaxSpeed) * 1.3f);
     }
 }

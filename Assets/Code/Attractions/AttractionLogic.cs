@@ -15,6 +15,7 @@ namespace Assets.Code.Attractions
         private int _kills;
         private readonly float _maxSpeed = 60;
         private bool _broken;
+        private IMechanical[] _mechanicalParts;
 
         public void Start()
         {
@@ -23,6 +24,8 @@ namespace Assets.Code.Attractions
             {
                 killTool.ZombieKilled += ZombieKilled;
             }
+
+            _mechanicalParts = GetComponentsInChildren<IMechanical>();
         }
 
         private void ZombieKilled()
@@ -52,7 +55,10 @@ namespace Assets.Code.Attractions
         {
             _broken = true;
             Smoke.Play();
-            Debug.Log("BROKEN");
+            foreach (var part in _mechanicalParts)
+            {
+                part.Deactivate();
+            }
         }
 
         public void Repair()
@@ -61,6 +67,10 @@ namespace Assets.Code.Attractions
             _startTime = Time.time;
             _broken = false;
             Smoke.Stop();
+            foreach (var part in _mechanicalParts)
+            {
+                part.Activate();
+            }
         }
 
         public void Upgrade()
