@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 131577830}
   - component: {fileID: 131577832}
   - component: {fileID: 131577831}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 136032163}
   - component: {fileID: 136032165}
   - component: {fileID: 136032164}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 204633947}
   - component: {fileID: 204633946}
   - component: {fileID: 204633944}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 271054247}
   - component: {fileID: 271054246}
   - component: {fileID: 271054245}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Box Outline Gray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 626338039}
   - component: {fileID: 626338038}
   - component: {fileID: 626338037}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: UpgradeRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 628208448}
   - component: {fileID: 628208450}
   - component: {fileID: 628208449}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Icon Highlighted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 699499085}
   - component: {fileID: 699499084}
   - component: {fileID: 699499083}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Repair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5638905221586541041}
+      - m_Target: {fileID: 1203295007}
         m_MethodName: Repair
         m_Mode: 1
         m_Arguments:
@@ -826,7 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716920542}
   - component: {fileID: 716920543}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 916835870}
   - component: {fileID: 916835872}
   - component: {fileID: 916835871}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 1014118074}
   - component: {fileID: 1014118075}
   - component: {fileID: 1014118076}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ModificationMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 1313980588}
   - component: {fileID: 1313980587}
   - component: {fileID: 1313980586}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 1845192462}
   - component: {fileID: 1845192464}
   - component: {fileID: 1845192463}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 2072890890}
   - component: {fileID: 2072890892}
   - component: {fileID: 2072890891}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 2088404921}
   - component: {fileID: 2088404920}
   - component: {fileID: 2088404919}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: UpgradeSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2491565047070147931}
-  - component: {fileID: 5638905221586541041}
+  - component: {fileID: 1203295007}
   m_Layer: 0
   m_Name: Rotating
   m_TagString: Untagged
@@ -1756,7 +1756,7 @@ Transform:
   m_Father: {fileID: 7150097191668516988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5638905221586541041
+--- !u!114 &1203295007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1765,12 +1765,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7954151421379209872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5478459be758c84c83e7ede890a5d60, type: 3}
+  m_Script: {fileID: 11500000, guid: cbb742c686ef31848b748f588ea3fbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   KillTools:
   - {fileID: 1420255749873314892}
   Smoke: {fileID: 8171962276968463680}
+  _speed: 0
 --- !u!1001 &3906871125266427262
 PrefabInstance:
   m_ObjectHideFlags: 0
