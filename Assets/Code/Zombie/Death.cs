@@ -27,10 +27,9 @@ public class Death : MonoBehaviour
     {
         onKilled?.Invoke(this);
         GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<Animator>().enabled = false;
         GetComponent<MoveToTarget>().enabled = false;
-        var rb = GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        rb.AddForce(Random.insideUnitSphere*10, ForceMode.Impulse);
+        //rb.AddForce(Random.insideUnitSphere*10, ForceMode.Impulse);
         gameObject.layer = 0;
     }
 }
