@@ -35,7 +35,7 @@ namespace Assets {
 
                 if (Input.GetMouseButtonUp(0))
                 {
-                    _currentlyPlacing.GetComponent<Buildable>().StartBuilding();
+                    _currentlyPlacing.GetComponent<Buildable>().EnableConstruction();
                     _currentlyPlacing = null;
                 }
             }

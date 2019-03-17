@@ -12,6 +12,12 @@ public class GunTrail : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(Play()); 
+    }
+
+
+    private IEnumerator Play()
+    {
         _particleSystem = GetComponent<ParticleSystem>();
         transform.position = (StartPosition + EndPosition) / 2f;
         var shape = _particleSystem.shape;
@@ -21,13 +27,15 @@ public class GunTrail : MonoBehaviour
         shape.scale = new Vector3(distance, 1, 1);
 
         var directionVector = EndPosition - StartPosition;
-
         directionVector.y = 0;
+        var rotation = Quaternion.LookRotation(directionVector, Vector3.up);
 
-        var angle = Vector3.Angle(Vector3.left, directionVector);
-
-        shape.rotation = new Vector3(0, angle, 0);
-
+        transform.rotation = rotation;
         _particleSystem.Play();
+
+        yield return new WaitForSeconds(2f);
+
+        Destroy(gameObject);
     }
+    
 }

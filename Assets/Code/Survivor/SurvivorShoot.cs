@@ -5,13 +5,15 @@ using UnityEngine;
 public class SurvivorShoot : MonoBehaviour
 {
     public GunTrail GunTrail;
-    public SphereCollider ZombieAttackTrigger;
-    public List<Death> NearbyZombies = new List<Death>();
+    public SurvivorSphereOfAwareness AwarenessSphere;
+    private AudioSource _audioSource;
+
     private Death ZombieTarget = null;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ShootZombies(Random.Range(3.5f, 4.5f)));
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,26 +22,7 @@ public class SurvivorShoot : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Zombie"))
-        {
-            var death = other.gameObject.GetComponent<Death>();
-            death.onKilled += OnKilled;
-            NearbyZombies.Add(death);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Zombie"))
-        {
-            var death = other.gameObject.GetComponent<Death>();
-            death.onKilled -= OnKilled;
-            NearbyZombies.Remove(death);
-        }
-    }
-
+   
     private IEnumerator ShootZombies(float time)
     {
         while (true)
@@ -55,27 +38,24 @@ public class SurvivorShoot : MonoBehaviour
             gunTrailInstance.StartPosition = transform.position;
             gunTrailInstance.EndPosition = zombie.transform.position;
 
+            _audioSource.Play();
 
-            NearbyZombies.Remove(zombie);
+            AwarenessSphere.NearbyZombies.Remove(zombie);
             zombie.Kill();
         }
     
     }
 
-    public void OnKilled(Death death)
-    {
-        NearbyZombies.Remove(death);
-        death.onKilled -= OnKilled;
-    }
+   
 
     private Death FindNearestZombie()
     {
-        if (NearbyZombies.Count == 0) return null;
+        if (AwarenessSphere.NearbyZombies.Count == 0) return null;
 
-        var nearestZombie = NearbyZombies[0];
+        var nearestZombie = AwarenessSphere.NearbyZombies[0];
         var nearestDistance = Vector3.Distance(transform.position, nearestZombie.transform.position);
 
-        foreach (var zombie in NearbyZombies)
+        foreach (var zombie in AwarenessSphere.NearbyZombies)
         {
             var distance = Vector3.Distance(transform.position, nearestZombie.transform.position);
 
