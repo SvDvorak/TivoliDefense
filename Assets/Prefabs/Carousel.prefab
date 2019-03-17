@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2213718480075091719}
   - component: {fileID: 1420255749873314892}
   - component: {fileID: 1372680376189681506}
+  - component: {fileID: 1980127704}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -121,6 +122,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!208 &1980127704
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953505375607555795}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &1405037275255687701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +244,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7150097191668516988}
   - component: {fileID: 3825828623459728534}
-  - component: {fileID: 9206569127024854447}
   - component: {fileID: 777354942}
   m_Layer: 0
   m_Name: Carousel
@@ -267,21 +283,8 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -1.85, z: 0}
   m_TimeToStationary: 0.5
---- !u!135 &9206569127024854447
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7150097191668516984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &777354942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +516,11 @@ PrefabInstance:
       propertyPath: ModicationsLogic
       value: 
       objectReference: {fileID: 777354942}
+    - target: {fileID: 6214357445124045920, guid: 2a498e02bf4973f449520129d01d2aff,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a498e02bf4973f449520129d01d2aff, type: 3}
 --- !u!4 &1014118074 stripped
