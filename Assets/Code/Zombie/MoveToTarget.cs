@@ -5,15 +5,20 @@ using UnityEngine.AI;
 
 public class MoveToTarget : MonoBehaviour
 {
-    private NavMeshAgent _navMeshAgent;
+    public float MaxSpeed = 3;
+
+    private NavMeshAgent _navAgent;
+    private Animator _animator;
 
     public void Start()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        //_navMeshAgent.SetDestination(Vector3.zero);
-        _navMeshAgent.speed = 2 + Random.value*2.5f;
+        _navAgent = GetComponent<NavMeshAgent>();
+        //_navAgent.SetDestination(Vector3.zero);
+        _navAgent.speed = 1 + Random.value*0.5f;
 
         StartCoroutine(FollowMouseCursor());
+
+        _animator = GetComponent<Animator>();
     }
 
     private IEnumerator FollowMouseCursor()
@@ -21,7 +26,7 @@ public class MoveToTarget : MonoBehaviour
         yield return new WaitForSeconds(Random.value * 3);
         while (enabled)
         {
-            _navMeshAgent.SetDestination(Gamestate.InputGroundPosition);
+            _navAgent.SetDestination(Gamestate.InputGroundPosition);
             yield return new WaitForSeconds(3);
         }
     }
@@ -30,8 +35,11 @@ public class MoveToTarget : MonoBehaviour
     {
         if (Gamestate.Gameover)
         {
-            _navMeshAgent.isStopped = true;
+            _navAgent.isStopped = true;
             enabled = false;
         }
+
+        if (_animator != null)
+            _animator.SetFloat("Distance", Mathf.Clamp(_navAgent.remainingDistance, 0.2f, MaxSpeed) * 1.3f);
     }
 }

@@ -5,7 +5,7 @@ public class GameoverArea : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag.ToUpper() == "ZOMBIE")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
             Debug.Log("GAME OVER");
 

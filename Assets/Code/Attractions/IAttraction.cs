@@ -1,1 +1,2 @@
-﻿public interface IAttraction { }
+﻿public interface IAttraction {
+}

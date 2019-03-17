@@ -21,15 +21,16 @@ public class KillTool : MonoBehaviour
         if (!CanHurt)
             return;
 
-        switch (collision.gameObject.tag.ToUpper())
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
-            case "ZOMBIE":
-                collision.gameObject.GetComponent<Death>().Kill();
-                ZombieKilled?.Invoke();
-                break;
-            case "BUILDABLE":
-                collision.gameObject.GetComponent<BuiltObject>().Destroy();
-                break;
+            collision.gameObject.SendMessageUpwards("Kill");
+            ZombieKilled?.Invoke();
+            var direction = collision.contacts[0].normal*500;
+            collision.rigidbody.AddForce(-direction, ForceMode.Impulse);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Buildable"))
+        {
+            collision.gameObject.GetComponent<BuiltObject>().Destroy();
         }
     }
 }

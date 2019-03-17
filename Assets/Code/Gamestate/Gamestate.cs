@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets
 {
@@ -11,7 +12,23 @@ namespace Assets
         public static void Reset()
         {
             Gameover = false;
-            WindowOpen = null;
+        }
+
+        public static void SetWindowState(OpenModification openModification, bool open)
+        {
+            if (WindowOpen)
+                WindowOpen.Close();
+
+            if (open)
+            {
+                openModification.Open();
+                WindowOpen = openModification;
+            }
+            else
+            {
+                openModification.Close();
+                WindowOpen = null;
+            }
         }
     }
 }

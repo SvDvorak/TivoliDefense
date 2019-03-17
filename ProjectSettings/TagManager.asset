@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - Buildable
+  - target
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Survivor
   - Zombie
   - Buildable
-  - 
-  - 
+  - Clickable
+  - Moving
   - 
   - 
   - 
