@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Code.Attractions {
+namespace Assets.Code.Attractions
+{
     public class AttractionLogic : MonoBehaviour, IAttraction
     {
         public List<KillTool> KillTools = new List<KillTool>();
         public ParticleSystem Smoke;
+        public string AttractionName { get; protected set; }
+
+        protected float Speed;
 
         private float _startTime = 0;
         private int _kills;
-        public float _speed;
-        private float _maxSpeed = 60;
+        private readonly float _maxSpeed = 60;
         private bool _broken;
 
         public void Start()
@@ -30,7 +33,7 @@ namespace Assets.Code.Attractions {
         public virtual void Update()
         {
             var changedSpeed = _broken ? -Time.deltaTime * 30 : Time.deltaTime * 60;
-            _speed = Mathf.Clamp(_speed + changedSpeed, 0, _maxSpeed);
+            Speed = Mathf.Clamp(Speed + changedSpeed, 0, _maxSpeed);
 
             var wear = Time.time - _startTime + _kills * 1;
             if (wear > 20 && !_broken)
@@ -38,7 +41,7 @@ namespace Assets.Code.Attractions {
                 BreakDown();
             }
 
-            var canHurt = _speed > 30;
+            var canHurt = Speed > 30;
             foreach (var killTool in KillTools)
             {
                 killTool.CanHurt = canHurt;
@@ -58,6 +61,10 @@ namespace Assets.Code.Attractions {
             _startTime = Time.time;
             _broken = false;
             Smoke.Stop();
+        }
+
+        public void Upgrade()
+        {
         }
     }
 }

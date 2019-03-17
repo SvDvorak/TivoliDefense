@@ -1,13 +1,17 @@
 ﻿using Assets;
+using Assets.Code.Attractions;
+using TMPro;
 using UnityEngine;
 
 public class OpenModification : MonoBehaviour
 {
+    public AttractionLogic ModicationsLogic;
     public GameObject Window;
+    public TextMeshProUGUI Title;
     
     public void Start()
     {
-        
+        Title.text = ModicationsLogic.AttractionName;
     }
 
     public void Update()
@@ -28,5 +32,15 @@ public class OpenModification : MonoBehaviour
     public void Close()
     {
         Window.SetActive(false);
+    }
+
+    public void Repair()
+    {
+        ModicationsLogic.Repair();
+    }
+
+    public void Upgrade()
+    {
+        ModicationsLogic.Repair();
     }
 }
