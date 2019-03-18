@@ -344,9 +344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreakThreshold: 0
   KillTools:
-  - {fileID: 0}
+  - {fileID: 1696497989323513481}
   Smoke: {fileID: 8433781807892270097}
-  Arm: {fileID: 0}
+  Arm: {fileID: 4970311100258016094}
 --- !u!1 &8433781807502810957
 GameObject:
   m_ObjectHideFlags: 0
