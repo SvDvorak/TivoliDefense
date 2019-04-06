@@ -315,9 +315,6 @@ GameObject:
   - component: {fileID: 7156197138123570315}
   - component: {fileID: 1696497989323513481}
   - component: {fileID: 8262619043908446212}
-  - component: {fileID: 1142340193426865952}
-  - component: {fileID: 1185249063978336878}
-  - component: {fileID: 6611257287392683698}
   m_Layer: 14
   m_Name: sitsar
   m_TagString: Untagged
@@ -433,45 +430,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &1142340193426865952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970311100258016092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.99783814, z: 2.27}
-  m_Center: {x: -1.9, y: -0.4174171, z: -0.005227685}
---- !u!65 &1185249063978336878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970311100258016092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.99783814, z: 2.27}
-  m_Center: {x: 1.9, y: -0.4174171, z: -0.005227685}
---- !u!65 &6611257287392683698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970311100258016092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.48, y: 0.99783814, z: 4.9127097}
-  m_Center: {x: 0, y: -0.4174171, z: 0.022837162}
 --- !u!1 &4970311100258016094
 GameObject:
   m_ObjectHideFlags: 0

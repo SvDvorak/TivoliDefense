@@ -41,7 +41,7 @@ public class SurvivorShoot : MonoBehaviour
             _audioSource.Play();
 
             AwarenessSphere.NearbyZombies.Remove(zombie);
-            zombie.Kill();
+            zombie.Kill((zombie.transform.position - transform.position).normalized*30);
         }
     
     }

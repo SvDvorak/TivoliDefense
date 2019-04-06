@@ -23,7 +23,7 @@ public class SurvivorSphereOfAwareness : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
-            var death = other.gameObject.GetComponent<Death>();
+            var death = other.gameObject.GetComponentInParent<Death>();
             death.onKilled += OnKilled;
             NearbyZombies.Add(death);
         }
@@ -33,7 +33,7 @@ public class SurvivorSphereOfAwareness : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
-            var death = other.gameObject.GetComponent<Death>();
+            var death = other.gameObject.GetComponentInParent<Death>();
             death.onKilled -= OnKilled;
             NearbyZombies.Remove(death);
         }

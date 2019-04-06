@@ -19,7 +19,7 @@ public class Death : MonoBehaviour
     private IEnumerator WaitAndKill()
     {
         yield return new WaitForSeconds(Random.value * 20);
-        Kill();
+        Kill(Vector3.zero);
     }
 
     public void Update()
@@ -28,18 +28,18 @@ public class Death : MonoBehaviour
     }
 
     [ContextMenu("KILL")]
-    public void Kill()
+    public void Kill(Vector3 force)
     {
         onKilled?.Invoke(this);
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Animator>().enabled = false;
         GetComponent<MoveToTarget>().enabled = false;
-        //rb.AddForce(Random.insideUnitSphere*10, ForceMode.Impulse);
 
         RemoveLayerOnAllChildren(transform);
         foreach (var rb in GetComponentsInChildren<Rigidbody>())
         {
             rb.isKinematic = false;
+            rb.AddForce(force, ForceMode.Impulse);
         }
     }
 

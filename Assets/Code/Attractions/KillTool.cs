@@ -23,7 +23,8 @@ public class KillTool : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
-            collision.gameObject.SendMessageUpwards("Kill");
+            var death = collision.gameObject.GetComponentInParent<Death>();
+            death.Kill(Vector3.zero);
             ZombieKilled?.Invoke();
             //var direction = collision.contacts[0].normal*500;
             //collision.rigidbody.AddForce(-direction, ForceMode.Impulse);

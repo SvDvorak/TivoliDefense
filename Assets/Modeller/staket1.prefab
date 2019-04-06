@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7331143037184276304}
   - component: {fileID: 7331143037170837104}
   - component: {fileID: 7331143037174978736}
-  m_Layer: 0
+  - component: {fileID: 1412481749}
+  - component: {fileID: 1412481750}
+  m_Layer: 12
   m_Name: staket1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7331143037184502640}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 1.255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -102,3 +104,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1412481749
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331143037184502640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0239465, y: 1.4271717, z: 0.24125123}
+  m_Center: {x: -0.8803009, y: 0.68809867, z: -0.013541102}
+--- !u!208 &1412481750
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331143037184502640}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.0119735, y: 0.713586, z: 0.1206256}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.8803009, y: 0.6880987, z: -0.0135411}
+  m_TimeToStationary: 0.5
