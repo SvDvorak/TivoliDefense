@@ -7,6 +7,7 @@ public class Survivor : MonoBehaviour
 {
     public SelectionIndicator SelectionIndicator;
     public NavMeshAgent NavMeshAgent;
+    public Animator ModelAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class Survivor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        ModelAnimator.SetFloat(Animator.StringToHash("Speed"), NavMeshAgent.velocity.magnitude); 
 
        
 
