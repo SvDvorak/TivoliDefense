@@ -14,6 +14,6 @@ public class SwingLogic : AttractionLogic
     {
         base.Update();
 
-        Arm.transform.rotation = Quaternion.Euler(Mathf.Sin(Time.time) * Speed * 1.3f, 0, 0);
+        Arm.transform.rotation = transform.rotation * Quaternion.Euler(Mathf.Sin(Time.time) * Speed * 1.3f, 0, 0);
     }
 }
