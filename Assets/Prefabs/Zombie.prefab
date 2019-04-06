@@ -3603,6 +3603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6672f17cdbd7f49b925b47bdbc02bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetPosition: {fileID: 0}
   MaxSpeed: 3
 --- !u!114 &6712988457502743256
 MonoBehaviour:
