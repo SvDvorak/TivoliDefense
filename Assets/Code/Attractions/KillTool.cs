@@ -25,8 +25,8 @@ public class KillTool : MonoBehaviour
         {
             collision.gameObject.SendMessageUpwards("Kill");
             ZombieKilled?.Invoke();
-            var direction = collision.contacts[0].normal*500;
-            collision.rigidbody.AddForce(-direction, ForceMode.Impulse);
+            //var direction = collision.contacts[0].normal*500;
+            //collision.rigidbody.AddForce(-direction, ForceMode.Impulse);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Buildable"))
         {

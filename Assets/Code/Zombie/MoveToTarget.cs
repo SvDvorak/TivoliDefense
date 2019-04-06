@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class MoveToTarget : MonoBehaviour
 {
+    public Transform TargetPosition;
     public float MaxSpeed = 3;
 
     private NavMeshAgent _navAgent;
@@ -16,9 +19,17 @@ public class MoveToTarget : MonoBehaviour
         //_navAgent.SetDestination(Vector3.zero);
         _navAgent.speed = 1 + Random.value*0.5f;
 
-        StartCoroutine(FollowMouseCursor());
+        StartCoroutine(TargetPosition != null
+            ? DelayStart(Random.value, () => _navAgent.SetDestination(TargetPosition.position))
+            : FollowMouseCursor());
 
         _animator = GetComponent<Animator>();
+    }
+
+    private IEnumerator DelayStart(float time, Action func)
+    {
+        yield return new WaitForSeconds(time);
+        func();
     }
 
     private IEnumerator FollowMouseCursor()
