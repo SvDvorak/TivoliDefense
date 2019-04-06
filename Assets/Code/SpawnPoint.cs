@@ -18,12 +18,12 @@ public class SpawnPoint : MonoBehaviour
         SpawnIndicator.gameObject.SetActive(active);
     }
 
-    public void SpawnZombies(int zombiesToSpawn, float initialDelay, float batchDelayMin, float batchDelayMax, int batchMin, int batchMax)
+    public void SpawnZombies(int zombiesToSpawn, float initialDelay, float batchDelayMin, float batchDelayMax, int batchMin, int batchMax, Transform target)
     {
-        StartCoroutine(DoSpawnZombies(zombiesToSpawn, initialDelay, batchDelayMin, batchDelayMax, batchMin, batchMax));
+        StartCoroutine(DoSpawnZombies(zombiesToSpawn, initialDelay, batchDelayMin, batchDelayMax, batchMin, batchMax, target));
     }
 
-    public IEnumerator DoSpawnZombies(int zombiesToSpawn, float initialDelay, float batchDelayMin, float batchDelayMax, int batchMin, int batchMax)
+    public IEnumerator DoSpawnZombies(int zombiesToSpawn, float initialDelay, float batchDelayMin, float batchDelayMax, int batchMin, int batchMax, Transform target)
     {
 
         SetIndicatorActive(true);
@@ -46,6 +46,8 @@ public class SpawnPoint : MonoBehaviour
 
                 var zombieInstance = Instantiate<GameObject>(ZombieSpawner.Instance.ZombieTypes.StandardZombie, null);
                 var agent = zombieInstance.GetComponent<NavMeshAgent>();
+                var moveToTarget = zombieInstance.GetComponent<MoveToTarget>();
+                moveToTarget.TargetPosition = target;
 
                 agent.Warp(position);
             }

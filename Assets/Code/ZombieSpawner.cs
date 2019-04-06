@@ -6,6 +6,8 @@ public class ZombieSpawner : Singleton<ZombieSpawner>
 {
     public float WaveInterval;
 
+    public Transform ZombieTarget;
+
     public int ZombiesPerWave;
     public float SpawnPointDelay;
     public int MinBatch;
@@ -42,7 +44,7 @@ public class ZombieSpawner : Singleton<ZombieSpawner>
 
     private void TriggerSpawnPoint(SpawnPoint spawnPoint)
     {
-        spawnPoint.SpawnZombies(ZombiesPerWave, SpawnPointDelay, MinBatchDelay, MaxBatchDelay, MinBatch, MaxBatch);
+        spawnPoint.SpawnZombies(ZombiesPerWave, SpawnPointDelay, MinBatchDelay, MaxBatchDelay, MinBatch, MaxBatch, ZombieTarget);
     }
 
 }
