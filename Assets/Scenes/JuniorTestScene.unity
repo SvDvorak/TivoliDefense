@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.60337234, g: 0.5428159, b: 0.69044656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -741,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &179595798
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,6 +1018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Survivor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164055899969841436, guid: 773e76a2f9bc4de4dbb03f85e3553852,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2164055899969841439, guid: 773e76a2f9bc4de4dbb03f85e3553852,
         type: 3}
@@ -4854,6 +4859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Survivor
       objectReference: {fileID: 0}
+    - target: {fileID: 2164055899969841436, guid: 773e76a2f9bc4de4dbb03f85e3553852,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2164055899969841439, guid: 773e76a2f9bc4de4dbb03f85e3553852,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4928,6 +4938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall Placement Indicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961763633127986118, guid: 7b5e68380f81a3e4283c0357d9ecc892,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8267163285793839962, guid: 7b5e68380f81a3e4283c0357d9ecc892,
         type: 3}
@@ -5082,6 +5097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrderController
       objectReference: {fileID: 0}
+    - target: {fileID: 8476956785967213975, guid: 303ca19fe8def2b4e845561552eda012,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8476956785967213969, guid: 303ca19fe8def2b4e845561552eda012,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5142,31 +5162,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8476956786395768272, guid: 303ca19fe8def2b4e845561552eda012,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 969204678}
-    - target: {fileID: 8476956787129142970, guid: 303ca19fe8def2b4e845561552eda012,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476956785967213968, guid: 303ca19fe8def2b4e845561552eda012,
-        type: 3}
-      propertyPath: WallPrefab
-      value: 
-      objectReference: {fileID: 2581844403692773061, guid: edf8557f4b0ad0745b19b60c92009d7b,
-        type: 3}
     - target: {fileID: 8476956785967213968, guid: 303ca19fe8def2b4e845561552eda012,
         type: 3}
       propertyPath: WallPlacementIndicator
       value: 
       objectReference: {fileID: 4961763633127986118}
-    - target: {fileID: 8476956785967213968, guid: 303ca19fe8def2b4e845561552eda012,
+    - target: {fileID: 8476956786395768272, guid: 303ca19fe8def2b4e845561552eda012,
         type: 3}
-      propertyPath: WallLength
-      value: 6
-      objectReference: {fileID: 0}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 969204678}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 303ca19fe8def2b4e845561552eda012, type: 3}

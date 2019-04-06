@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 458662d4df0f11a408346ea551029615
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: "h\xE4st1"
+    100002: "h\xE4st2"
+    100004: "h\xE4st3"
+    100006: "h\xE4st4"
+    100008: "h\xE4st5"
+    100010: "h\xE4st6"
+    100012: "h\xE4st7"
+    100014: "h\xE4st8"
+    100016: //RootNode
+    100018: "vapenH\xE4st1"
+    100020: "vapenH\xE4st2"
+    100022: "vapenH\xE4st2_1"
+    100024: "vapenH\xE4st3"
+    100026: "vapenH\xE4st4"
+    100028: "vapenH\xE4st4_1"
+    100030: "vapenH\xE4st5"
+    100032: "vapenH\xE4st6"
+    100034: "vapenH\xE4st7"
+    100036: "vapenH\xE4st8"
+    100038: "vapenH\xE4st8_1"
+    100040: vapenPlattform
+    400000: "h\xE4st1"
+    400002: "h\xE4st2"
+    400004: "h\xE4st3"
+    400006: "h\xE4st4"
+    400008: "h\xE4st5"
+    400010: "h\xE4st6"
+    400012: "h\xE4st7"
+    400014: "h\xE4st8"
+    400016: //RootNode
+    400018: "vapenH\xE4st1"
+    400020: "vapenH\xE4st2"
+    400022: "vapenH\xE4st2_1"
+    400024: "vapenH\xE4st3"
+    400026: "vapenH\xE4st4"
+    400028: "vapenH\xE4st4_1"
+    400030: "vapenH\xE4st5"
+    400032: "vapenH\xE4st6"
+    400034: "vapenH\xE4st7"
+    400036: "vapenH\xE4st8"
+    400038: "vapenH\xE4st8_1"
+    400040: vapenPlattform
+    2100000: Mat4
+    2100002: Mat3
+    2100004: Mat6
+    2100006: blinn8
+    2300000: "h\xE4st1"
+    2300002: "h\xE4st2"
+    2300004: "h\xE4st3"
+    2300006: "h\xE4st4"
+    2300008: "h\xE4st5"
+    2300010: "h\xE4st6"
+    2300012: "h\xE4st7"
+    2300014: "h\xE4st8"
+    2300016: //RootNode
+    3300000: "h\xE4st1"
+    3300002: "h\xE4st2"
+    3300004: "h\xE4st3"
+    3300006: "h\xE4st4"
+    3300008: "h\xE4st5"
+    3300010: "h\xE4st6"
+    3300012: "h\xE4st7"
+    3300014: "h\xE4st8"
+    3300016: //RootNode
+    4300000: karusell1
+    4300002: "h\xE4st1"
+    4300004: "vapenH\xE4st1"
+    4300006: "h\xE4st2"
+    4300008: "vapenH\xE4st2_1"
+    4300010: "vapenH\xE4st2"
+    4300012: "h\xE4st3"
+    4300014: "vapenH\xE4st3"
+    4300016: "h\xE4st4"
+    4300018: "vapenH\xE4st4_1"
+    4300020: "vapenH\xE4st4"
+    4300022: "h\xE4st5"
+    4300024: "vapenH\xE4st5"
+    4300026: "h\xE4st6"
+    4300028: "vapenH\xE4st6"
+    4300030: "h\xE4st7"
+    4300032: "vapenH\xE4st7"
+    4300034: "h\xE4st8"
+    4300036: "vapenH\xE4st8"
+    4300038: "vapenH\xE4st8_1"
+    4300040: vapenPlattform
+    9500000: //RootNode
+    13700000: "vapenH\xE4st1"
+    13700002: "vapenH\xE4st2"
+    13700004: "vapenH\xE4st2_1"
+    13700006: "vapenH\xE4st3"
+    13700008: "vapenH\xE4st4"
+    13700010: "vapenH\xE4st4_1"
+    13700012: "vapenH\xE4st5"
+    13700014: "vapenH\xE4st6"
+    13700016: "vapenH\xE4st7"
+    13700018: "vapenH\xE4st8"
+    13700020: "vapenH\xE4st8_1"
+    13700022: vapenPlattform
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

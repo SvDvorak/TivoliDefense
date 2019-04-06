@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -44,8 +45,9 @@ public class SpawnPoint : MonoBehaviour
                 position.y = 0;
 
                 var zombieInstance = Instantiate<GameObject>(ZombieSpawner.Instance.ZombieTypes.StandardZombie, null);
+                var agent = zombieInstance.GetComponent<NavMeshAgent>();
 
-                zombieInstance.transform.position = position;
+                agent.Warp(position);
             }
 
             zombiesToSpawn -= batchSize;

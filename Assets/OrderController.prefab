@@ -44,8 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c77bd0d2aa89374b90b6985543b6e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 0
   SelectedSurvivors: []
   SelectionBoxImage: {fileID: 8476956787129142970}
+  WallPlacementIndicator: {fileID: 4961763633127986118, guid: 7b5e68380f81a3e4283c0357d9ecc892,
+    type: 3}
+  WallLength: 6
+  WallPrefab: {fileID: 2581844403692773061, guid: edf8557f4b0ad0745b19b60c92009d7b,
+    type: 3}
 --- !u!1 &8476956786395768276
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476956787129142969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
