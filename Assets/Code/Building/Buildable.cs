@@ -59,7 +59,7 @@ public class Buildable : MonoBehaviour
     {
         _buildTrigger.enabled = true;
 
-        _height = Built.GetComponent<MeshRenderer>().bounds.size.y;
+        _height = Built.GetComponent<SkinnedMeshRenderer>().bounds.size.y;
         _endPosition = Built.transform.localPosition;
         _startPosition = Built.transform.localPosition - Vector3.up * _height;
         Built.transform.localPosition = _startPosition;
