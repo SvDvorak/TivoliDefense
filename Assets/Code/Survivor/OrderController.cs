@@ -28,7 +28,7 @@ public class OrderController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"Mode: {Mode}");
+        //Debug.Log($"Mode: {Mode}");
         switch (Mode)
         {
             case OrderMode.MoveSelect:
