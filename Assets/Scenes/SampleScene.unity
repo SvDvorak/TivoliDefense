@@ -8486,78 +8486,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 253410318}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &254630692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9062627476864551356, guid: 12e7afb09835c52448170cbeb06d28c5,
-    type: 3}
-  m_PrefabInstance: {fileID: 9062627477329454066}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &254630693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254630692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 254630697}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 1
-  antialiasingMode: 3
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 1
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
---- !u!4 &254630697 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9062627476864551331, guid: 12e7afb09835c52448170cbeb06d28c5,
-    type: 3}
-  m_PrefabInstance: {fileID: 9062627477329454066}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &256241625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6461926372948319507, guid: d104695569b58e94fbaf717f22dd5267,
@@ -38907,15 +38835,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 1754425948836193087, guid: 773e76a2f9bc4de4dbb03f85e3553852,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1754425948843446517, guid: 773e76a2f9bc4de4dbb03f85e3553852,
         type: 3}
       propertyPath: m_WarningMessage
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754425948836193087, guid: 773e76a2f9bc4de4dbb03f85e3553852,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1754425948836193059, guid: 773e76a2f9bc4de4dbb03f85e3553852,
         type: 3}
@@ -73723,7 +73651,7 @@ PrefabInstance:
     - target: {fileID: 9062627476864551328, guid: 12e7afb09835c52448170cbeb06d28c5,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e7afb09835c52448170cbeb06d28c5, type: 3}
