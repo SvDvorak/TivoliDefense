@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1412481750}
   m_Layer: 12
   m_Name: staket1
-  m_TagString: Untagged
+  m_TagString: Buildable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
