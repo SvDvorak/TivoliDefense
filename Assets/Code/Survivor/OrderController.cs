@@ -136,15 +136,30 @@ public class OrderController : MonoBehaviour
         if (Input.GetMouseButton(1) && _isDragging == false)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var isInputOverGround = Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Ground"));
+            var isInputOverGround = Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Ground", "Buildable"));
             Gamestate.InputGroundPosition = hit.point;
 
             if (hit.collider == null) return;
 
-            foreach (var survivor in SelectedSurvivors)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
-                var navAgent = survivor.NavMeshAgent.SetDestination(hit.point);
+                foreach (var survivor in SelectedSurvivors)
+                {
+                    var navAgent = survivor.NavMeshAgent.SetDestination(hit.point);
+                    survivor.StopBuild();
+                }
             }
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Buildable") && SelectedSurvivors.Count > 0)
+            {
+                var buildable = hit.collider.GetComponentInParent<Buildable>();
+
+                if (buildable != null && buildable.BuildProgress < 1f)
+                {
+                    SelectedSurvivors[0].Build(buildable);
+                }
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && _isDragging == false)

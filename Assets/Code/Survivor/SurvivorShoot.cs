@@ -29,8 +29,11 @@ public class SurvivorShoot : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
 
-            var zombie = FindNearestZombie();
+            var zombie = FindNearestZombieWithinFov();
             if (zombie == null) continue;
+
+            var directionToZombie = zombie.transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(directionToZombie, Vector3.up);
 
             Debug.DrawLine(transform.position, zombie.transform.position, Color.blue, time);
 
@@ -48,7 +51,7 @@ public class SurvivorShoot : MonoBehaviour
 
    
 
-    private Death FindNearestZombie()
+    private Death FindNearestZombieWithinFov()
     {
         if (AwarenessSphere.NearbyZombies.Count == 0) return null;
 
@@ -58,13 +61,27 @@ public class SurvivorShoot : MonoBehaviour
         foreach (var zombie in AwarenessSphere.NearbyZombies)
         {
             var distance = Vector3.Distance(transform.position, nearestZombie.transform.position);
+            var fromSurvivorToZombie = zombie.transform.position - transform.position;
 
-            if (distance < nearestDistance)
+           
+
+            Debug.DrawLine(transform.position, transform.position + transform.forward * 5, Color.red, 2f);
+
+            var angle = Vector3.Angle(transform.forward, fromSurvivorToZombie.normalized);
+            Debug.Log($"ANgle: {angle}");
+
+            if (angle < 70 && distance < nearestDistance)
             {
+                Debug.DrawLine(transform.position, transform.position + fromSurvivorToZombie, Color.blue, 2f);
                 nearestZombie = zombie;
                 nearestDistance = distance;
             }
         }
+
+        var fromSurvivorToFinalZombie = nearestZombie.transform.position - transform.position;
+        var finalAngle = Vector3.Angle(transform.forward, fromSurvivorToFinalZombie.normalized);
+
+        if (finalAngle > 70) return null;
 
         return nearestZombie;
     }

@@ -41,11 +41,11 @@ public class Buildable : MonoBehaviour
     {
         if (BuildProgress < 1f)
         {
-            var builderCount = BuildingSurvivors.Count;
+            //var builderCount = BuildingSurvivors.Count;
 
-            BuildingIndicator.BuildSpeed = builderCount;
+            //BuildingIndicator.BuildSpeed = builderCount;
 
-            BuildProgress += builderCount * 0.2f * Time.deltaTime;
+            //BuildProgress += builderCount * 0.2f * Time.deltaTime;
 
             Built.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, BuildProgress);
         }
