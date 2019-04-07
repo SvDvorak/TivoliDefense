@@ -8,6 +8,9 @@ namespace Assets
         public static Vector3 InputGroundPosition;
         public static bool Gameover { get; set; }
         public static OpenModification WindowOpen { get; set; }
+        public static bool HasBreakableLeft => Breakables.Count > 0;
+
+        public static List<Breakable> Breakables = new List<Breakable>();
 
         public static void Reset()
         {

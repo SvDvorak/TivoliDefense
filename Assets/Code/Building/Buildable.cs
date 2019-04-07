@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets;
 using UnityEngine;
 
 public class Buildable : MonoBehaviour
@@ -19,6 +20,7 @@ public class Buildable : MonoBehaviour
     private BuiltObject _builtObject;
     private SphereCollider _buildTrigger;
     private RadiusIndicator _buildRadiusIndicator;
+    private bool _finished;
 
     public void Awake()
     {
@@ -49,7 +51,7 @@ public class Buildable : MonoBehaviour
 
             Built.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, BuildProgress);
         }
-        else
+        else if(!_finished)
         {
             Finish();
         }
@@ -76,10 +78,12 @@ public class Buildable : MonoBehaviour
 
     private void Finish()
     {
+        _finished = true;
         var buildRadiusIndicator = BuildRadiusIndicator.GetComponent<RadiusIndicator>();
         buildRadiusIndicator.SetIndicatorVisible(false);
         Preview.SetActive(false);
         BuildingIndicator.gameObject.SetActive(false);
+        Gamestate.Breakables.Add(_builtObject.GetComponent<Breakable>());
     }
 
     private void OnTriggerEnter(Collider other)
