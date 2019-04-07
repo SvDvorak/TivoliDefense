@@ -6,15 +6,19 @@ public class KillTool : MonoBehaviour
     public event Action ZombieKilled;
     public bool CanHurt { get; set; }
     private Rigidbody _rigidbody;
+    private Vector3 _lastPosition;
+    private Vector3 _movement;
 
     public void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _movement = _rigidbody.position;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        
+        _movement = (_rigidbody.position - _lastPosition).normalized;
+        _lastPosition = _rigidbody.position;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -25,7 +29,7 @@ public class KillTool : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Zombie"))
         {
             var death = collision.gameObject.GetComponentInParent<Death>();
-            death.Kill(Vector3.zero);
+            death.Kill((_movement + Vector3.up)*100);
             ZombieKilled?.Invoke();
             //var joint = collision.gameObject.AddComponent<FixedJoint>();
             //joint.connectedBody = _rigidbody;

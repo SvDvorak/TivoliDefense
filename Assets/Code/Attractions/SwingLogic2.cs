@@ -4,6 +4,7 @@ using UnityEngine;
 public class SwingLogic2 : AttractionLogic
 {
     public ConfigurableJoint Arm;
+    public Transform ForcePosition;
     private Rigidbody _rigidbody;
     private int _direction;
     private float _pushStart;
@@ -12,13 +13,28 @@ public class SwingLogic2 : AttractionLogic
     {
         _rigidbody = Arm.gameObject.GetComponent<Rigidbody>();
         _pushStart = Time.time + 3;
+        foreach (var killTool in KillTools)
+        {
+            killTool.CanHurt = true;
+        }
+    }
+
+    public override void Update()
+    {
+        
     }
 
     public void FixedUpdate()
     {
-        Debug.DrawLine(Arm.transform.position, Arm.transform.position + Arm.transform.right * 10, Color.blue, 10);
         Debug.Log(_rigidbody.angularVelocity);
-        _rigidbody.AddRelativeTorque(Arm.transform.forward * 100000);
+        if(ForcePosition != null)
+        {
+            var forceDir = Arm.transform.forward;
+            var force = forceDir * 1000;
+            Debug.DrawLine(ForcePosition.position, ForcePosition.position + forceDir * 3, Color.blue, 10);
+            //_rigidbody.AddForceAtPosition(force, ForcePosition.position, ForceMode.Force);
+            //_rigidbody.AddTorque(Arm.transform.right * 1000);
+        }
         //if (_rigidbody.angularVelocity.z < 0 || Time.time < _pushStart)
         //{
         //    _direction = -_direction;
