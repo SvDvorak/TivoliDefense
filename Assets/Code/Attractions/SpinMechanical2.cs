@@ -20,7 +20,7 @@ public class SpinMechanical2 : MonoBehaviour, IMechanical
     public void FixedUpdate()
     {
         Debug.DrawLine(transform.position, transform.position + transform.up * 10, Color.red);
-        _rigidbody.AddTorque(transform.up * 1000);
+        _rigidbody.AddTorque(transform.up*1000);
         Debug.Log(_rigidbody.angularVelocity);
     }
 }
